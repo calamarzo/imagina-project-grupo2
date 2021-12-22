@@ -20,7 +20,7 @@ jobs:
         login-server: imaginaproject.azurecr.io
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag imagina-project-grupo2:$(date +%s)
+      run: docker build . --file Dockerfile --tag imagina-project-grupo2:${{ github.sha }}
       
     - name: Push the Docker image
-      run: docker push --tag imagina-project-grupo2:$(date +%s)
+      run: docker push --tag imagina-project-grupo2:${{ github.sha }}
