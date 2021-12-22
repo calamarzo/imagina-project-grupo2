@@ -15,8 +15,8 @@ jobs:
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
-        username: ${{ secret.AZURE_CONTAINER_USERNAME }}
-        password: ${{ secret.AZURE_CONTAINER_PWD}}
+        username: ${{ secrets.AZURE_CONTAINER_USERNAME }}
+        password: ${{ secrets.AZURE_CONTAINER_PWD}}
         login-server: imaginaproject.azurecr.io
     
     - name: Build the Docker image
