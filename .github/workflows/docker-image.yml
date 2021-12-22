@@ -23,4 +23,4 @@ jobs:
       run: docker build . --file Dockerfile --tag imaginaproject.azurecr.io/imagina-project-grupo2:${{ github.sha }}
       
     - name: Push the Docker image
-      run: docker push --tag imaginaproject.azurecr.io/imagina-project-grupo2:${{ github.sha }}
+      run: docker push imaginaproject.azurecr.io/imagina-project-grupo2:${{ github.sha }}
