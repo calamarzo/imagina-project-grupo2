@@ -11,5 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        username: ${{ secret.AZURE_CONTAINER_USERNAME }}
+        password: ${{ secret.AZURE_CONTAINER_PWD}}
+        login-server: imaginaproject.azurecr.io
+    
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag imagina-project-grupo2:$(date +%s)
+      
+    - name: Push the Docker image
+      run: docker push --tag imagina-project-grupo2:$(date +%s)
