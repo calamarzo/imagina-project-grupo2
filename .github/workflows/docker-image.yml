@@ -26,6 +26,7 @@ jobs:
       run: docker push imaginaproject.azurecr.io/imagina-project-grupo2:${{ github.sha }}
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Azure WebApp
